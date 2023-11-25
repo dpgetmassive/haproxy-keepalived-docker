@@ -23,7 +23,7 @@ networks:
   ha-stack:
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 10.16.0.0.0/24
 
 services:
   runner:
@@ -51,7 +51,7 @@ services:
     <<: *haproxy-service
     networks:
       ha-stack:
-        ipv4_address: 172.20.0.50
+        ipv4_address: 10.16.1.4
         aliases:
           - haproxy-a.ha.stack
 
@@ -59,7 +59,7 @@ services:
     <<: *haproxy-service
     networks:
       ha-stack:
-        ipv4_address: 172.20.0.60
+        ipv4_address: 10.16.1.44
         aliases:
           - haproxy-b.ha.stack
 
